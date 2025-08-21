@@ -1,0 +1,27 @@
+{
+    "users":[
+        {
+            "id" : 1,
+            "username":"Neesarg77",
+            "first_name":"Neesarg",
+            "email":"neesarg@gmail.com"
+        },
+         {
+            "id" : 2,
+            "username":"Gandu69",
+            "first_name":"Rahil",
+            "email":"gandu@gmail.com"
+        },
+         {
+            "id" : 1,
+            "username":"Indraa57",
+            "first_name":"Indrajeet",
+            "email":"indra@gmail.com"
+        }, {
+            "id" : 4,
+            "username":"Randiboy_22",
+            "first_name":"Samuel",
+            "email":"lust@gmail.com"
+        }
+    ]
+}
