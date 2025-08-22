@@ -1,5 +1,5 @@
 # use official node.js image
-FROM node:18-apline
+FROM node:18-alpine
 # set the working directory
 WORKDIR /           
 #copy the package.json contents
