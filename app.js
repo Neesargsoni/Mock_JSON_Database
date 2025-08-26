@@ -2,6 +2,7 @@ const express = require('express')
 const app = express();
 require('dotenv').config();
 const mongoose = require('mongoose')
+const userRoutes = require('./routes/users.js')
 
 const PORT = process.env.PORT;
 const uri = process.env.MONGO_URI;
@@ -16,21 +17,10 @@ app.set('views','./views');
 app.use(express.urlencoded({extended : true}))
 app.use(express.json());
 app.use(express.static('public'))
+app.use(userRoutes);            
 
 // route handler for home page
-app.get('/home',(req,res)=>{
-    res.render('home')
-})
-                                     
-//api endpoint for exposing the resource
-app.get('/api/v1/users',async (req,res)=>{
-    try{
-       const data = await readData();
-       res.status(200).send(data);                                 
-    }
-    catch(error){                                    
-      res.status(500).send(`Internal Server error :${error.message}`)
-    }});
+
 mongoose.connect(uri).then(
     async () => {
         console.log('connected to MongoDB');
@@ -40,4 +30,4 @@ mongoose.connect(uri).then(
     }
 ).
 catch((err)=>{
-  console.log(`Error:${error}`)})
+  console.log(`Error:${err}`)})
